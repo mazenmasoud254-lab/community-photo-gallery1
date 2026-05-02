@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Community Photo Gallery | Centralized Photo Platform</title>
-  <!-- Font Awesome 6 for crisp icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Inter for clean modern typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -29,16 +27,16 @@
       padding: 0 24px;
     }
 
-    /* Header & Navigation */
+    /* Navigation */
     .navbar {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       position: sticky;
       top: 0;
       z-index: 100;
       padding: 16px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     }
 
     .nav-container {
@@ -57,6 +55,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .logo:hover {
+      color: #2563eb;
     }
 
     .logo i {
@@ -72,15 +76,19 @@
       gap: 32px;
       font-weight: 500;
       color: #334155;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    .nav-links span {
-      cursor: default;
-      transition: 0.2s ease;
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
       font-size: 0.95rem;
+      transition: 0.2s ease;
+      cursor: pointer;
     }
 
-    .nav-links span:hover {
+    .nav-links a:hover {
       color: #2563eb;
     }
 
@@ -96,6 +104,10 @@
       transition: all 0.2s ease;
       box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
       letter-spacing: 0.3px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .btn-primary:hover {
@@ -104,7 +116,69 @@
       transform: translateY(-1px);
     }
 
-    /* Hero / Project Overview */
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #e2e8f0;
+      color: #334155;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-outline:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+      background: #f8faff;
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+
+    .user-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f1f5f9;
+      padding: 6px 16px 6px 6px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background: #2563eb;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    /* Main Content Styles */
     .hero {
       padding: 70px 0 60px;
       text-align: center;
@@ -158,12 +232,6 @@
       flex-wrap: wrap;
     }
 
-    .team-members i {
-      color: #2563eb;
-      margin-right: 6px;
-    }
-
-    /* Cards / Features Grid */
     .section-title {
       font-size: 2.2rem;
       font-weight: 700;
@@ -186,6 +254,7 @@
       box-shadow: 0 15px 35px rgba(0,0,0,0.04);
       transition: all 0.25s;
       border: 1px solid #f0f4fe;
+      cursor: pointer;
     }
 
     .card:hover {
@@ -218,7 +287,6 @@
       font-size: 0.98rem;
     }
 
-    /* Before vs After */
     .compare-container {
       display: flex;
       flex-wrap: wrap;
@@ -264,7 +332,6 @@
       font-weight: 500;
     }
 
-    /* Steps */
     .steps {
       display: flex;
       flex-wrap: wrap;
@@ -280,6 +347,13 @@
       flex: 1 1 200px;
       text-align: center;
       box-shadow: 0 12px 28px rgba(0,0,0,0.03);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .step-card:hover {
+      background: #f8fafc;
+      transform: scale(1.02);
     }
 
     .step-number {
@@ -296,7 +370,6 @@
       font-size: 1.4rem;
     }
 
-    /* Tech stack */
     .tech-icons {
       display: flex;
       flex-wrap: wrap;
@@ -309,6 +382,7 @@
 
     .tech-icons i {
       transition: 0.2s;
+      cursor: pointer;
     }
 
     .tech-icons i:hover {
@@ -316,7 +390,6 @@
       transform: scale(1.1);
     }
 
-    /* Footer */
     .footer {
       background: white;
       margin-top: 70px;
@@ -334,6 +407,260 @@
       font-weight: 500;
     }
 
+    .future-list span {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .future-list span:hover {
+      color: #2563eb;
+    }
+
+    /* Gallery Styles */
+    .gallery-header {
+      padding: 30px 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .gallery-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .gallery-controls {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 40px;
+      padding: 8px 18px;
+      border: 1px solid #e2e8f0;
+      gap: 8px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 0.9rem;
+      width: 180px;
+      background: transparent;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 30px 0;
+    }
+
+    .photo-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+      transition: 0.25s;
+      border: 1px solid #f0f4fe;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 35px rgba(37,99,235,0.1);
+    }
+
+    .photo-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+    }
+
+    .photo-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-info {
+      padding: 16px;
+    }
+
+    .photo-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .photo-meta {
+      font-size: 0.85rem;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .photo-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .photo-actions span {
+      cursor: pointer;
+      color: #64748b;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: 0.2s;
+    }
+
+    .photo-actions span:hover {
+      color: #2563eb;
+    }
+
+    .comment-section {
+      margin-top: 12px;
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 0.85rem;
+    }
+
+    .comment {
+      margin-bottom: 8px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .comment strong {
+      color: #2563eb;
+    }
+
+    /* Login Page */
+    .login-container {
+      display: none;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-card {
+      background: white;
+      border-radius: 32px;
+      padding: 48px 40px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .login-card h2 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #334155;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      font-size: 1rem;
+      background: #f8fafc;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 40px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .back-link {
+      margin-top: 24px;
+      color: #2563eb;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .account-selector {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .account-selector select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      font-size: 0.9rem;
+      background: white;
+    }
+
+    .dashboard-view {
+      display: none;
+    }
+
+    .main-content {
+      display: block;
+    }
+
+    .toast-message {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1e293b;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 40px;
+      font-weight: 500;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+
     @media (max-width: 640px) {
       .hero h1 {
         font-size: 2.4rem;
@@ -345,204 +672,539 @@
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container nav-container">
-      <div class="logo">
-        <i class="fas fa-images"></i> Community Gallery
-      </div>
-      <div class="nav-links">
-        <span>Overview</span>
-        <span>Features</span>
-        <span>How it works</span>
-        <span>Contact</span>
-      </div>
-      <button class="btn-primary"><i class="fas fa-arrow-right-to-bracket"></i> Get Started</button>
-    </div>
-  </nav>
+  <div id="toast" class="toast-message"><i class="fas fa-check-circle"></i> <span id="toastText"></span></div>
 
-  <main class="container">
-    <!-- Hero / Project Overview -->
-    <section class="hero">
-      <div class="presented-by">
-        <i class="fas fa-users"></i> Presented By: Youssef Sharkas | Mazen Masoud | Moemen Mamdouh | Yasien Ehab | Hamza Hazem
+  <!-- MAIN LANDING PAGE -->
+  <div id="mainContent" class="main-content">
+    <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo" onclick="scrollToTop()"><i class="fas fa-images"></i> Community Gallery</div>
+        <div class="nav-links">
+          <a onclick="scrollToSection('overview')">Overview</a>
+          <a onclick="scrollToSection('features')">Features</a>
+          <a onclick="scrollToSection('how')">How it works</a>
+          <a onclick="showToast('Contact us at hello@communitygallery.com')">Contact</a>
+        </div>
+        <button class="btn-primary" onclick="showLogin()"><i class="fas fa-arrow-right-to-bracket"></i> Get Started</button>
       </div>
-      <h1>
-        Community <span class="highlight">Photo Gallery</span>
-      </h1>
-      <p class="hero-description">
-        A centralized platform for organizing, sharing, and celebrating community moments.
-        Unified photo sharing with simplicity and usability at its core.
-      </p>
-      <div class="team-members">
-        <span><i class="fas fa-user-circle"></i> Youssef S.</span>
-        <span><i class="fas fa-user-circle"></i> Mazen M.</span>
-        <span><i class="fas fa-user-circle"></i> Moemen M.</span>
-        <span><i class="fas fa-user-circle"></i> Yasien E.</span>
-        <span><i class="fas fa-user-circle"></i> Hamza H.</span>
-      </div>
-    </section>
+    </nav>
 
-    <!-- The Problem & Solution -->
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-triangle-exclamation"></i></div>
-        <h3>Fragmented Storage</h3>
-        <p>Photos scattered across apps, devices, and messaging platforms — no single source of truth.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-folder-open"></i></div>
-        <h3>Lack of Structure</h3>
-        <p>No centralized system to categorize, tag, or retrieve photos efficiently.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-magnifying-glass"></i></div>
-        <h3>Hard to Access Memories</h3>
-        <p>Locating specific photos from past events is time-consuming and frustrating.</p>
-      </div>
-    </div>
+    <main class="container">
+      <section id="overview" class="hero">
+        <div class="presented-by">
+          <i class="fas fa-users"></i> Presented By: Youssef Sharkas | Mazen Masoud | Moemen Mamdouh | Yasien Ehab | Hamza Hazem
+        </div>
+        <h1>Community <span class="highlight">Photo Gallery</span></h1>
+        <p class="hero-description">
+          A centralized platform for organizing, sharing, and celebrating community moments.
+          Unified photo sharing with simplicity and usability at its core.
+        </p>
+        <div class="team-members">
+          <span><i class="fas fa-user-circle"></i> Youssef S.</span>
+          <span><i class="fas fa-user-circle"></i> Mazen M.</span>
+          <span><i class="fas fa-user-circle"></i> Moemen M.</span>
+          <span><i class="fas fa-user-circle"></i> Yasien E.</span>
+          <span><i class="fas fa-user-circle"></i> Hamza H.</span>
+        </div>
+      </section>
 
-    <div style="text-align: center; margin: 30px 0 10px;">
-      <span style="background: #2563eb; color: white; padding: 8px 24px; border-radius: 30px; font-weight: 600;">Our Solution</span>
-      <h2 style="margin-top: 20px;">Centralized, Accessible Photo Management</h2>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-        <h3>Central Repository</h3>
-        <p>Single secure web gallery consolidating all community photos in one organized location.</p>
+      <div class="grid-3">
+        <div class="card" onclick="showToast('Fragmented storage solved by centralization')">
+          <div class="card-icon"><i class="fas fa-triangle-exclamation"></i></div>
+          <h3>Fragmented Storage</h3>
+          <p>Photos scattered across apps, devices, and messaging platforms.</p>
+        </div>
+        <div class="card" onclick="showToast('Structure through smart organization')">
+          <div class="card-icon"><i class="fas fa-folder-open"></i></div>
+          <h3>Lack of Structure</h3>
+          <p>No centralized system to categorize or retrieve photos efficiently.</p>
+        </div>
+        <div class="card" onclick="showToast('Instant search saves time')">
+          <div class="card-icon"><i class="fas fa-magnifying-glass"></i></div>
+          <h3>Hard to Access</h3>
+          <p>Locating specific photos from past events is time-consuming.</p>
+        </div>
       </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-tags"></i></div>
-        <h3>Structured & Searchable</h3>
-        <p>Systematic organization with fast retrieval and effortless browsing.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-globe"></i></div>
-        <h3>Anytime, Anywhere</h3>
-        <p>Cloud-accessible from any device, ensuring memories are always available.</p>
-      </div>
-    </div>
 
-    <!-- Before vs After -->
-    <h2 class="section-title">Before vs. After</h2>
-    <div class="compare-container">
-      <div class="compare-box before-box">
-        <h3><i class="fas fa-circle-xmark"></i> Before</h3>
-        <ul class="compare-list">
-          <li><i class="fas fa-times-circle" style="color:#ef4444;"></i> Photos scattered across messaging apps</li>
-          <li><i class="fas fa-times-circle" style="color:#ef4444;"></i> Disorganized, hard-to-navigate storage</li>
-          <li><i class="fas fa-times-circle" style="color:#ef4444;"></i> Time lost searching for memories</li>
-        </ul>
+      <div style="text-align: center; margin: 30px 0 10px;">
+        <span style="background: #2563eb; color: white; padding: 8px 24px; border-radius: 30px; font-weight: 600;">Our Solution</span>
+        <h2 style="margin-top: 20px;">Centralized, Accessible Photo Management</h2>
       </div>
-      <div class="compare-box after-box">
-        <h3><i class="fas fa-check-circle"></i> After</h3>
-        <ul class="compare-list">
-          <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> All photos centralized in one gallery</li>
-          <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> Intuitive organization, instant retrieval</li>
-          <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> Shared memories accessible anywhere</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Key Features -->
-    <h2 class="section-title">Key Features</h2>
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-upload"></i></div>
-        <h3>Seamless Photo Uploads</h3>
-        <p>Effortlessly upload and store images with an intuitive interface.</p>
+      <div class="grid-3">
+        <div class="card" onclick="showLogin()">
+          <div class="card-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+          <h3>Central Repository</h3>
+          <p>Single secure web gallery consolidating all community photos.</p>
+        </div>
+        <div class="card" onclick="showToast('Advanced search and tags coming soon')">
+          <div class="card-icon"><i class="fas fa-tags"></i></div>
+          <h3>Structured & Searchable</h3>
+          <p>Systematic organization with fast retrieval and browsing.</p>
+        </div>
+        <div class="card" onclick="showToast('Access from any device, anywhere')">
+          <div class="card-icon"><i class="fas fa-globe"></i></div>
+          <h3>Anytime, Anywhere</h3>
+          <p>Cloud-accessible from any device, ensuring memories available.</p>
+        </div>
       </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-shield-haltered"></i></div>
-        <h3>Secure Authentication</h3>
-        <p>Role-based login system ensuring personalized, secure access.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-comments"></i></div>
-        <h3>Community Engagement</h3>
-        <p>Comment, discuss, and connect around shared content.</p>
-      </div>
-    </div>
 
-    <!-- How It Works -->
-    <h2 class="section-title">How It Works</h2>
-    <div class="steps">
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <i class="fas fa-sign-in-alt" style="font-size: 2rem; color:#2563eb; margin-bottom: 10px;"></i>
-        <h3>Authenticate</h3>
-        <p>Securely log in or register to access personalized dashboard.</p>
+      <h2 id="features" class="section-title">Before vs. After</h2>
+      <div class="compare-container">
+        <div class="compare-box before-box">
+          <h3><i class="fas fa-circle-xmark"></i> Before</h3>
+          <ul class="compare-list">
+            <li><i class="fas fa-times-circle" style="color:#ef4444;"></i> Photos scattered across messaging apps</li>
+            <li><i class="fas fa-times-circle" style="color:#ef4444;"></i> Disorganized, hard-to-navigate storage</li>
+            <li><i class="fas fa-times-circle" style="color:#ef4444;"></i> Time lost searching for memories</li>
+          </ul>
+        </div>
+        <div class="compare-box after-box">
+          <h3><i class="fas fa-check-circle"></i> After</h3>
+          <ul class="compare-list">
+            <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> All photos centralized in one gallery</li>
+            <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> Intuitive organization, instant retrieval</li>
+            <li><i class="fas fa-check-circle" style="color:#22c55e;"></i> Shared memories accessible anywhere</li>
+          </ul>
+        </div>
       </div>
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color:#2563eb; margin-bottom: 10px;"></i>
-        <h3>Upload & Organize</h3>
-        <p>Select photos with metadata; automatically organized.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <i class="fas fa-heart" style="font-size: 2rem; color:#2563eb; margin-bottom: 10px;"></i>
-        <h3>Explore & Engage</h3>
-        <p>Browse gallery, interact, and celebrate memories together.</p>
-      </div>
-    </div>
 
-    <!-- Technology Stack -->
-    <h2 class="section-title">Technology Stack</h2>
-    <div class="tech-icons">
-      <i class="fab fa-html5" title="HTML5"></i>
-      <i class="fab fa-css3-alt" title="CSS3"></i>
-      <i class="fab fa-js-square" title="JavaScript"></i>
-      <i class="fas fa-database" title="Database"></i>
-    </div>
-    <p style="text-align: center; color: #475569; max-width: 600px; margin: 0 auto;">
-      Semantic HTML5, responsive CSS3, interactive JavaScript, and robust database storage for accounts and content.
-    </p>
+      <h2 id="how" class="section-title">How It Works</h2>
+      <div class="steps">
+        <div class="step-card" onclick="showLogin()">
+          <div class="step-number">1</div>
+          <i class="fas fa-sign-in-alt" style="font-size: 2rem; color:#2563eb; margin-bottom: 10px;"></i>
+          <h3>Authenticate</h3>
+          <p>Securely log in or register to access dashboard.</p>
+        </div>
+        <div class="step-card" onclick="showToast('Upload photos with metadata')">
+          <div class="step-number">2</div>
+          <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color:#2563eb; margin-bottom: 10px;"></i>
+          <h3>Upload & Organize</h3>
+          <p>Select photos with metadata; auto-organized.</p>
+        </div>
+        <div class="step-card" onclick="showToast('Explore community gallery')">
+          <div class="step-number">3</div>
+          <i class="fas fa-heart" style="font-size: 2rem; color:#2563eb; margin-bottom: 10px;"></i>
+          <h3>Explore & Engage</h3>
+          <p>Browse gallery, interact, celebrate together.</p>
+        </div>
+      </div>
 
-    <!-- Key Benefits -->
-    <h2 class="section-title">Key Benefits</h2>
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-rocket"></i></div>
-        <h3>High Performance</h3>
-        <p>Optimized architecture for fast load times and smooth experience.</p>
+      <h2 class="section-title">Technology Stack</h2>
+      <div class="tech-icons">
+        <i class="fab fa-html5" onclick="showToast('HTML5: Semantic structure')"></i>
+        <i class="fab fa-css3-alt" onclick="showToast('CSS3: Responsive styling')"></i>
+        <i class="fab fa-js-square" onclick="showToast('JavaScript: Interactive logic')"></i>
+        <i class="fas fa-database" onclick="showToast('Database: Persistent storage')"></i>
       </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-clock"></i></div>
-        <h3>Time Savings</h3>
-        <p>Eliminate hours spent searching across multiple platforms.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
-        <h3>Enhanced Communication</h3>
-        <p>Shared galleries foster interaction and strengthen community bonds.</p>
-      </div>
-    </div>
 
-    <!-- Conclusion & Future Roadmap -->
-    <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 32px; padding: 40px 32px; margin: 50px 0 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.02);">
-      <h2 class="section-title" style="margin-top: 0;">Conclusion & Future Roadmap</h2>
-      <p style="text-align: center; font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; color: #334155;">
-        A platform built to grow with your community — scalable, extensible, and ready for tomorrow.
-      </p>
-      <div class="future-list">
-        <span><i class="fas fa-thumbs-up" style="color:#2563eb;"></i> Photo Reactions</span>
-        <span><i class="fas fa-filter" style="color:#2563eb;"></i> Advanced Filters</span>
-        <span><i class="fas fa-brain" style="color:#2563eb;"></i> AI-Powered Tagging</span>
-        <span><i class="fas fa-mobile-alt" style="color:#2563eb;"></i> Native Mobile App</span>
+      <h2 class="section-title">Key Benefits</h2>
+      <div class="grid-3">
+        <div class="card" onclick="showToast('Optimized for speed and performance')">
+          <div class="card-icon"><i class="fas fa-rocket"></i></div>
+          <h3>High Performance</h3>
+          <p>Optimized architecture for fast load times.</p>
+        </div>
+        <div class="card" onclick="showToast('Save hours of searching')">
+          <div class="card-icon"><i class="fas fa-clock"></i></div>
+          <h3>Time Savings</h3>
+          <p>Eliminate hours spent searching multiple platforms.</p>
+        </div>
+        <div class="card" onclick="showToast('Strengthen community bonds')">
+          <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Enhanced Communication</h3>
+          <p>Shared galleries foster interaction and bonds.</p>
+        </div>
       </div>
-      <div style="text-align: center; margin-top: 25px;">
-        <button class="btn-primary" style="font-size: 1rem; padding: 14px 36px;"><i class="fas fa-comment-dots"></i> We Welcome Your Questions & Feedback</button>
-      </div>
-    </div>
-  </main>
 
-  <footer class="footer">
+      <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 32px; padding: 40px 32px; margin: 50px 0 30px;">
+        <h2 class="section-title" style="margin-top: 0;">Future Roadmap</h2>
+        <div class="future-list">
+          <span onclick="showToast('Photo reactions coming soon!')"><i class="fas fa-thumbs-up" style="color:#2563eb;"></i> Photo Reactions</span>
+          <span onclick="showToast('Advanced filters in development')"><i class="fas fa-filter" style="color:#2563eb;"></i> Advanced Filters</span>
+          <span onclick="showToast('AI tagging on the roadmap')"><i class="fas fa-brain" style="color:#2563eb;"></i> AI-Powered Tagging</span>
+          <span onclick="showToast('Mobile app planned')"><i class="fas fa-mobile-alt" style="color:#2563eb;"></i> Native Mobile App</span>
+        </div>
+        <div style="text-align: center; margin-top: 25px;">
+          <button class="btn-primary" onclick="showToast('Thank you! We appreciate your feedback.')"><i class="fas fa-comment-dots"></i> Send Feedback</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p style="font-weight: 600; font-size: 1.2rem;">Community Photo Gallery</p>
+        <p style="color: #64748b;">Youssef Sharkas · Mazen Masoud · Moemen Mamdouh · Yasien Ehab · Hamza Hazem</p>
+        <p style="color: #94a3b8; margin-top: 12px;">© 2025 Community Photo Gallery</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="login-container">
+    <div class="login-card">
+      <div style="font-size: 3rem; color:#2563eb; margin-bottom: 10px;"><i class="fas fa-images"></i></div>
+      <h2>Welcome Back</h2>
+      <p style="color:#64748b; margin-bottom: 24px;">Sign in to your community gallery</p>
+      
+      <div class="account-selector">
+        <label style="font-weight: 600; display: block; margin-bottom: 8px;">Quick Select Account:</label>
+        <select id="accountSelect" onchange="fillCredentials()">
+          <option value="">Choose an account...</option>
+          <option value="demo@community.com">Demo User (demo@community.com)</option>
+          <option value="youssef@gallery.com">Youssef Sharkas</option>
+          <option value="mazen@gallery.com">Mazen Masoud</option>
+          <option value="moemen@gallery.com">Moemen Mamdouh</option>
+          <option value="yasien@gallery.com">Yasien Ehab</option>
+          <option value="hamza@gallery.com">Hamza Hazem</option>
+          <option value="admin@gallery.com">Admin Account</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Email address</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com">
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" value="password123">
+      </div>
+      
+      <button class="login-btn" onclick="handleLogin()"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+      
+      <div style="margin-top: 16px; font-size: 0.9rem;">
+        <span onclick="showToast('Registration form coming soon')" style="cursor: pointer; color: #2563eb;">Create account</span> · 
+        <span onclick="showToast('Password reset link sent')" style="cursor: pointer; color: #2563eb;">Forgot password?</span>
+      </div>
+      
+      <div class="back-link" onclick="hideLogin()"><i class="fas fa-arrow-left"></i> Back to Home</div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD VIEW -->
+  <div id="dashboardView" class="dashboard-view">
+    <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo" onclick="showToast('Community Photo Gallery Dashboard')"><i class="fas fa-images"></i> My Gallery</div>
+        <div class="nav-links">
+          <a onclick="filterPhotos('all')">All Photos</a>
+          <a onclick="filterPhotos('events')">Events</a>
+          <a onclick="filterPhotos('nature')">Nature</a>
+          <a onclick="filterPhotos('family')">Family</a>
+          <div class="user-badge">
+            <div class="user-avatar" id="userInitial">U</div>
+            <span id="userEmailDisplay">user@gallery.com</span>
+          </div>
+          <button class="btn-outline" onclick="showUploadModal()"><i class="fas fa-upload"></i> Upload</button>
+          <button class="btn-outline" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+      </div>
+    </nav>
+
     <div class="container">
-      <p style="font-weight: 600; font-size: 1.2rem; margin-bottom: 8px;">Community Photo Gallery</p>
-      <p style="color: #64748b;">Youssef Sharkas · Mazen Masoud · Moemen Mamdouh · Yasien Ehab · Hamza Hazem</p>
-      <p style="color: #94a3b8; margin-top: 12px; font-size: 0.9rem;">© 2025 Community Photo Gallery — Centralized platform for shared memories</p>
+      <div class="gallery-header">
+        <h2>📸 <span id="galleryTitle">Community Photo Gallery</span></h2>
+        <div class="gallery-controls">
+          <div class="search-box">
+            <i class="fas fa-search" style="color:#94a3b8;"></i>
+            <input type="text" id="searchInput" placeholder="Search photos..." oninput="filterPhotos()">
+          </div>
+          <button class="btn-primary" onclick="showUploadModal()"><i class="fas fa-plus"></i> Add Photos</button>
+        </div>
+      </div>
+
+      <div id="photoGrid" class="photo-grid"></div>
     </div>
-  </footer>
+  </div>
+
+  <!-- UPLOAD MODAL -->
+  <div id="uploadModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 200; align-items: center; justify-content: center;">
+    <div style="background: white; border-radius: 24px; padding: 32px; max-width: 500px; width: 90%;">
+      <h3 style="margin-bottom: 20px;"><i class="fas fa-cloud-upload-alt"></i> Upload Photo</h3>
+      <div class="input-group">
+        <label>Photo Title</label>
+        <input type="text" id="uploadTitle" placeholder="Enter photo title">
+      </div>
+      <div class="input-group">
+        <label>Category</label>
+        <select id="uploadCategory" style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <option value="events">Events</option>
+          <option value="nature">Nature</option>
+          <option value="family">Family</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Image URL</label>
+        <input type="text" id="uploadImage" placeholder="https://example.com/photo.jpg" value="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=400&h=250&fit=crop">
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <button class="btn-primary" onclick="uploadPhoto()" style="flex: 1;">Upload</button>
+        <button class="btn-outline" onclick="closeUploadModal()" style="flex: 1;">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Multiple user accounts with their own photo collections
+    const userAccounts = {
+      'demo@community.com': {
+        name: 'Demo User',
+        password: 'password123',
+        photos: [
+          { id: 1, title: "Summer Community Picnic", image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=250&fit=crop", category: "events", uploader: "Demo User", date: "2025-05-20", likes: 24, comments: [{ user: "Mazen", text: "Great memories! 🌞" }] },
+          { id: 2, title: "Neighborhood Garden", image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop", category: "nature", uploader: "Demo User", date: "2025-05-18", likes: 18, comments: [] }
+        ]
+      },
+      'youssef@gallery.com': {
+        name: 'Youssef Sharkas',
+        password: 'password123',
+        photos: [
+          { id: 101, title: "Youssef's Art Exhibition", image: "https://images.unsplash.com/photo-1531913764164-f85c3e89d7c3?w=400&h=250&fit=crop", category: "events", uploader: "Youssef Sharkas", date: "2025-05-15", likes: 31, comments: [{ user: "Mazen", text: "Incredible!" }] },
+          { id: 102, title: "Spring Flowers", image: "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&h=250&fit=crop", category: "nature", uploader: "Youssef Sharkas", date: "2025-05-08", likes: 19, comments: [] }
+        ]
+      },
+      'mazen@gallery.com': {
+        name: 'Mazen Masoud',
+        password: 'password123',
+        photos: [
+          { id: 201, title: "Volunteer Cleanup", image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=250&fit=crop", category: "events", uploader: "Mazen Masoud", date: "2025-05-10", likes: 27, comments: [] },
+          { id: 202, title: "Family BBQ", image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=250&fit=crop", category: "family", uploader: "Mazen Masoud", date: "2025-05-05", likes: 15, comments: [] }
+        ]
+      },
+      'moemen@gallery.com': {
+        name: 'Moemen Mamdouh',
+        password: 'password123',
+        photos: [
+          { id: 301, title: "Lake Sunset", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=250&fit=crop", category: "nature", uploader: "Moemen Mamdouh", date: "2025-05-12", likes: 42, comments: [] }
+        ]
+      },
+      'yasien@gallery.com': {
+        name: 'Yasien Ehab',
+        password: 'password123',
+        photos: [
+          { id: 401, title: "Community Workshop", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=250&fit=crop", category: "events", uploader: "Yasien Ehab", date: "2025-04-28", likes: 12, comments: [] }
+        ]
+      },
+      'hamza@gallery.com': {
+        name: 'Hamza Hazem',
+        password: 'password123',
+        photos: [
+          { id: 501, title: "Mountain Hike", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=250&fit=crop", category: "nature", uploader: "Hamza Hazem", date: "2025-04-20", likes: 33, comments: [] }
+        ]
+      },
+      'admin@gallery.com': {
+        name: 'Admin',
+        password: 'admin123',
+        photos: [
+          { id: 999, title: "All Community Events", image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=250&fit=crop", category: "events", uploader: "Admin", date: "2025-05-22", likes: 50, comments: [{ user: "Youssef", text: "Great overview!" }] }
+        ]
+      }
+    };
+
+    let currentUser = null;
+    let currentFilter = 'all';
+
+    function fillCredentials() {
+      const select = document.getElementById('accountSelect');
+      const email = select.value;
+      if (email && userAccounts[email]) {
+        document.getElementById('loginEmail').value = email;
+        document.getElementById('loginPassword').value = userAccounts[email].password;
+      } else {
+        document.getElementById('loginEmail').value = '';
+        document.getElementById('loginPassword').value = 'password123';
+      }
+    }
+
+    function renderPhotos(filter = 'all', searchTerm = '') {
+      const grid = document.getElementById('photoGrid');
+      if (!grid || !currentUser) return;
+      
+      let photos = currentUser.photos || [];
+      
+      if (filter !== 'all') {
+        photos = photos.filter(p => p.category === filter);
+      }
+      
+      if (searchTerm) {
+        const term = searchTerm.toLowerCase();
+        photos = photos.filter(p => 
+          p.title.toLowerCase().includes(term) || 
+          p.uploader.toLowerCase().includes(term)
+        );
+      }
+      
+      grid.innerHTML = photos.map(photo => `
+        <div class="photo-card">
+          <div class="photo-image">
+            <img src="${photo.image}" alt="${photo.title}" onerror="this.parentElement.innerHTML='<i class=\\'fas fa-image\\' style=\\'font-size:3rem;color:#94a3b8;\\'></i>'">
+          </div>
+          <div class="photo-info">
+            <div class="photo-title">${photo.title}</div>
+            <div class="photo-meta">
+              <span><i class="far fa-user"></i> ${photo.uploader}</span>
+              <span><i class="far fa-calendar"></i> ${photo.date}</span>
+            </div>
+            <div class="photo-actions">
+              <span onclick="likePhoto(${photo.id})"><i class="far fa-heart"></i> ${photo.likes}</span>
+              <span><i class="far fa-comment"></i> ${photo.comments?.length || 0}</span>
+              <span onclick="sharePhoto('${photo.title}')"><i class="fas fa-share"></i> Share</span>
+              <span onclick="deletePhoto(${photo.id})" style="color: #ef4444;"><i class="fas fa-trash"></i></span>
+            </div>
+            ${photo.comments && photo.comments.length > 0 ? `
+            <div class="comment-section">
+              ${photo.comments.map(c => `<div class="comment"><strong>${c.user}</strong> ${c.text}</div>`).join('')}
+            </div>` : ''}
+          </div>
+        </div>
+      `).join('') || '<p style="text-align: center; grid-column: 1/-1; padding: 40px;">No photos found. Upload some!</p>';
+    }
+
+    function filterPhotos(category = 'all') {
+      currentFilter = category;
+      const searchTerm = document.getElementById('searchInput')?.value || '';
+      renderPhotos(category, searchTerm);
+    }
+
+    function likePhoto(id) {
+      if (!currentUser) return;
+      const photo = currentUser.photos.find(p => p.id === id);
+      if (photo) {
+        photo.likes++;
+        renderPhotos(currentFilter, document.getElementById('searchInput')?.value || '');
+        showToast(`❤️ Liked "${photo.title}"`);
+      }
+    }
+
+    function sharePhoto(title) {
+      showToast(`📤 Sharing "${title}" with community...`);
+    }
+
+    function deletePhoto(id) {
+      if (!currentUser) return;
+      currentUser.photos = currentUser.photos.filter(p => p.id !== id);
+      renderPhotos(currentFilter, document.getElementById('searchInput')?.value || '');
+      showToast('Photo deleted');
+    }
+
+    function showUploadModal() {
+      document.getElementById('uploadModal').style.display = 'flex';
+    }
+
+    function closeUploadModal() {
+      document.getElementById('uploadModal').style.display = 'none';
+    }
+
+    function uploadPhoto() {
+      if (!currentUser) return;
+      const title = document.getElementById('uploadTitle').value.trim();
+      const category = document.getElementById('uploadCategory').value;
+      const image = document.getElementById('uploadImage').value.trim();
+      
+      if (!title) {
+        showToast('Please enter a title');
+        return;
+      }
+      
+      const newPhoto = {
+        id: Date.now(),
+        title: title,
+        image: image || 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=400&h=250&fit=crop',
+        category: category,
+        uploader: currentUser.name,
+        date: new Date().toISOString().split('T')[0],
+        likes: 0,
+        comments: []
+      };
+      
+      currentUser.photos.unshift(newPhoto);
+      renderPhotos(currentFilter);
+      closeUploadModal();
+      showToast('✅ Photo uploaded successfully!');
+      document.getElementById('uploadTitle').value = '';
+    }
+
+    function showLogin() {
+      document.getElementById('mainContent').style.display = 'none';
+      document.getElementById('dashboardView').style.display = 'none';
+      document.getElementById('loginPage').style.display = 'flex';
+    }
+
+    function hideLogin() {
+      document.getElementById('loginPage').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+      document.getElementById('dashboardView').style.display = 'none';
+    }
+
+    function handleLogin() {
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      
+      if (!email || !password) {
+        showToast('Please enter email and password');
+        return;
+      }
+      
+      const account = userAccounts[email];
+      if (account && account.password === password) {
+        currentUser = account;
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'none';
+        document.getElementById('dashboardView').style.display = 'block';
+        
+        document.getElementById('userEmailDisplay').textContent = email;
+        document.getElementById('userInitial').textContent = account.name.charAt(0).toUpperCase();
+        document.getElementById('galleryTitle').textContent = `${account.name}'s Gallery`;
+        
+        currentFilter = 'all';
+        renderPhotos('all');
+        showToast(`✅ Welcome, ${account.name}!`);
+      } else {
+        showToast('❌ Invalid credentials. Try demo@community.com / password123');
+      }
+    }
+
+    function logout() {
+      currentUser = null;
+      document.getElementById('dashboardView').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+      showToast('Logged out successfully');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastText').textContent = message;
+      toast.style.display = 'flex';
+      if (window.toastTimer) clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => { toast.style.display = 'none'; }, 3000);
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          if (currentUser) renderPhotos(currentFilter, this.value);
+        });
+      }
+      
+      document.getElementById('loginPassword')?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleLogin();
+      });
+      
+      // Close modal on background click
+      document.getElementById('uploadModal')?.addEventListener('click', function(e) {
+        if (e.target === this) closeUploadModal();
+      });
+    });
+  </script>
 </body>
 </html>
